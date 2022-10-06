@@ -6,6 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 import { User } from './users/entities/user.entity';
 import { EventsModule } from './events/events.module';
+import { ItemEvent } from './events/entities/event.entity';
 
 @Module({
   imports: [
@@ -17,7 +18,7 @@ import { EventsModule } from './events/events.module';
       username: 'nestjs',
       password: 'g4wvTprj9Lkws331',
       database: 'nestjs',
-      entities: [User],
+      entities: [User,ItemEvent],
       synchronize: true,
     }),
     EventsModule,

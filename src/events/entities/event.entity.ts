@@ -1,7 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-export class Event {}
-
 @Entity()
 export class ItemEvent {
   @PrimaryGeneratedColumn()
