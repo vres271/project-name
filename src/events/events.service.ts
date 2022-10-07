@@ -15,7 +15,7 @@ export class EventsService {
   
 
   create(@Body() createEventDto: CreateEventDto) {
-    return this.eventsRepository.insert(createEventDto);
+    return this.eventsRepository.save(createEventDto);
   }
 
 
