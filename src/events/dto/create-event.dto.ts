@@ -5,7 +5,7 @@ export class CreateEventDto {
     type: number;
   
     @ApiProperty()
-    t: number;
+    t: string;
   
     @ApiProperty()
     value: string;

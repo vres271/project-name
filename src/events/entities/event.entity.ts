@@ -8,8 +8,8 @@ export class ItemEvent {
   @Column({ type: "int", width: 3 })
   type: number;
 
-  @Column({ type: 'timestamp' })
-  t: number;
+  @Column({ type: 'datetime' })
+  t: string;
 
   @Column({ type: "varchar", width: 200 })
   value: string;

@@ -9,6 +9,9 @@ export class EventsController {
 
   @Post()
   create(@Body() createEventDto: CreateEventDto) {
+    if(createEventDto?.t) {
+      createEventDto.t = new Date(createEventDto.t).toISOString().slice(0, 19).replace('T', ' ');
+    }
     return this.eventsService.create(createEventDto);
   }
 
