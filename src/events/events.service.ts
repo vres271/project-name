@@ -14,8 +14,19 @@ export class EventsService {
   ) {}
   
 
-  create(@Body() createEventDto: CreateEventDto) {
-    return this.eventsRepository.save(createEventDto);
+  create(createEventDto: CreateEventDto) {
+
+    let t = new Date(createEventDto.t).toLocaleString()
+    let arr = t.split(', ')
+    let d = arr[0].split('.')
+    let t1 = d[2]+'-'+d[1]+'-'+d[0]+' '+arr[1];
+
+    const item = {
+      ...createEventDto,
+      t: t1,
+    }
+
+    return this.eventsRepository.save(item);
   }
 
 
